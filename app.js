@@ -1,4 +1,4 @@
-(function(modules) {
+(function (modules) {
   var installedModules = {};
   function require(moduleId) {
     if (installedModules[moduleId]) {
@@ -30,69 +30,38 @@
     for (var i = 0; i < callbacks.length; i++) callbacks[i](require);
   };
   return require(0);
-})({
-  0: function(module, exports, require) {
-    var a = require(1);
-    a();
-    const c = require(2);
-    c();
-    require.ensure(3, () => {
-      const b = require(4);
-      b();
-      const c = require(2);
-      c();
-      const c = require(2);
-      c();
-    });
-    require.ensure(5, () => {
-      const c = require(2);
-      c();
-    });
-    var e = require(1);
-    e();
-    var f = require(1);
-    f();
-  },
-  1: function(module, exports, require) {
-    function a() {
-      console.log("module a function");
-    }
-    module.exports = a;
-  },
-  2: function(module, exports, require) {
-    function c() {
-      console.log("module c function");
-    }
-    module.exports = c;
-  },
-  2: function(module, exports, require) {
-    function c() {
-      console.log("module c function");
-    }
-    module.exports = c;
-  },
-  2: function(module, exports, require) {
-    function c() {
-      console.log("module c function");
-    }
-    module.exports = c;
-  },
-  2: function(module, exports, require) {
-    function c() {
-      console.log("module c function");
-    }
-    module.exports = c;
-  },
-  1: function(module, exports, require) {
-    function a() {
-      console.log("module a function");
-    }
-    module.exports = a;
-  },
-  1: function(module, exports, require) {
-    function a() {
-      console.log("module a function");
-    }
-    module.exports = a;
+})({0:function(module, exports, require){
+		var a = require(1)
+a()
+
+require.ensure(2, () => {
+  const b = require(3)
+  b()
+})
+const c = require(4)
+  c()
+require.ensure(5, () => {
+  const a = require(1)
+  a()
+})
+
+	},
+	1:function(module, exports, require){
+		const c = require('./c.js')
+c()
+require.ensure([], () => {
+  const b = require('./b.js')
+  b()
+})
+function a() {
+    console.log('module a function')
   }
-});
+  module.exports = a
+	},
+	4:function(module, exports, require){
+		function c() {
+  console.log('module c function')
+}
+module.exports = c
+	},
+	})
