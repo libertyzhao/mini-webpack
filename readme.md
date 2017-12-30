@@ -1,5 +1,6 @@
-###mini-webpack
-目前只实现了将多个commonjs模块打包成一个js文件，和代码分割异步加载的功能
+### mini-webpack
+目前只实现了将多个commonjs模块打包成一个js文件，和代码分割异步加载的功能.
+主要是作为了解webpack和练手的小东西。
 
 ### 基本思路
 
